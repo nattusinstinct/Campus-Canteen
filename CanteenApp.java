@@ -31,6 +31,4 @@ public  class CanteenApp{
         }
         System.out.println("VAzhga VAlamudun , kanedkjbwjb:.");
     }
-
-
 }
