@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class OrderController {
     private ArrayList<MenuItem> menu;
-    private ArrayList<Order> orders;
+    private ArrayList<Order> orders=new ArrayList<>();
     private OrderView view;
     private Scanner scanner;
 
@@ -35,7 +35,7 @@ public class OrderController {
     }
 
     public double getGrandTotal() {
-        double total = 0;
+        double total =0;
         for (Order order : orders) {
             total += order.getTotal();
         }
@@ -45,5 +45,6 @@ public class OrderController {
     public void printReceipt() {
         view.printReceipt(orders);
         System.out.println("Grand Total: Rs." + (int) getGrandTotal());
+        orders.clear(); // start fresh for the next customer
     }
 }

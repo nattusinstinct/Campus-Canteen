@@ -8,8 +8,6 @@ public  class CanteenApp{
         menu.add(new MenuItem("Masala Dosa", 40));
         menu.add(new MenuItem("Idli", 20));
         menu.add(new MenuItem("Filter Coffee", 15));
-
-       
         OrderView view = new OrderView();
         OrderController controller = new OrderController( menu ,view);
 
@@ -30,3 +28,4 @@ public  class CanteenApp{
 
 
 }
+
