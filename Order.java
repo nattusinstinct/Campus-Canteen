@@ -16,8 +16,12 @@ public class Order {
         return quantity;
     }
 
-    
+
     public double getTotal() {
+<<<<<<< HEAD
+        return item.getPrice()*quantity;
+=======
         return item.getPrice() * quantity ;
+>>>>>>> 917c24b80be6116a79fa0d36199563df61519f01
     }
 }
