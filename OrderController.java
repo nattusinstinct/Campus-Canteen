@@ -23,14 +23,13 @@ public class OrderController {
     }
 
     public boolean isFinished(int choice) {
-        return choice != 4;
+        return choice == 4;
     }
 
     public void takeOrder(int choice) {
         System.out.print("Enter quantity: ");
         int quantity = scanner.nextInt();
         MenuItem picked = menu.get(choice);
-        ArrayList<Order> orders = new ArrayList<Order>();
         orders.add(new Order(picked, quantity));
         System.out.println("Added: " + picked.getName() + " x " + quantity);
     }

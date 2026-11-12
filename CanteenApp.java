@@ -1,18 +1,17 @@
 import java.util.ArrayList;
 
-
+public  class CanteenApp{
     public static void main(String[] args) {
      
         ArrayList<MenuItem> menu = new ArrayList<MenuItem>();
+
         menu.add(new MenuItem("Masala Dosa", 40));
         menu.add(new MenuItem("Idli", 20));
         menu.add(new MenuItem("Filter Coffee", 15));
 
        
         OrderView view = new OrderView();
-
-       
-        OrderController controller = new OrderController(view, menu);
+        OrderController controller = new OrderController( menu ,view);
 
         System.out.println("Welcome to Campus Canteen!");
         boolean running = true;
@@ -23,9 +22,11 @@ import java.util.ArrayList;
                 controller.printReceipt();
                 running = false;
             } else {
-                controller.takeOrder(choice);
+                controller.takeOrder(choice -1);
             }
         }
         System.out.println("VAzhga VAlamudun , kanedkjbwjb:.");
     }
+
+
 }

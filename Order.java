@@ -18,6 +18,6 @@ public class Order {
 
     
     public double getTotal() {
-        return item.getPrice();
+        return item.getPrice() * quantity ;
     }
 }
