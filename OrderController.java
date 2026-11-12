@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class OrderController {
-    private ArrayList<MenuItem> menu;
-    private ArrayList<Order> orders;
-    private OrderView view;
-    private Scanner scanner;
+    private final ArrayList<MenuItem> menu;
+    private  final ArrayList<Order> orders;
+    private  final OrderView view;
+    private  final Scanner scanner;
 
     public OrderController(ArrayList<MenuItem> menu, OrderView view) {
         this.menu = menu;
@@ -30,12 +30,14 @@ public class OrderController {
         System.out.print("Enter quantity: ");
         int quantity = scanner.nextInt();
         MenuItem picked = menu.get(choice);
-        ArrayList<Order> orders = new ArrayList<Order>();
+
         orders.add(new Order(picked, quantity));
         System.out.println("Added: " + picked.getName() + " x " + quantity);
     }
 
     public double getGrandTotal() {
+        //System.out.println("Yes go to getGrant");
+
         double total = 0;
         for (Order order : orders) {
             total += order.getTotal();

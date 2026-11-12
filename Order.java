@@ -1,7 +1,7 @@
 
 public class Order {
-    private MenuItem item;
-    private int quantity;
+    private final MenuItem item;
+    private  final int quantity;
 
     public Order(MenuItem item, int quantity) {
         this.item = item;
