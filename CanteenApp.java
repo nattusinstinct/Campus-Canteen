@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import ava.util.ArrayList;
 
 public  class CanteenApp{
     public static void main(String[] args) {
@@ -25,7 +25,7 @@ public  class CanteenApp{
                 controller.takeOrder(choice -1);
             }
         }
-        System.out.println("Thank you! Visit again.");
+        System.out.println("Thank you! Visit again.😊");
     }
 
 
