@@ -1,9 +1,11 @@
+import com.sun.security.jgss.GSSUtil;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class OrderController {
+    private ArrayList<Order> orders = new ArrayList<Order>();
     private ArrayList<MenuItem> menu;
-    private ArrayList<Order> orders;
     private OrderView view;
     private Scanner scanner;
 
@@ -27,23 +29,37 @@ public class OrderController {
     }
 
     public void takeOrder(int choice) {
+
         System.out.print("Enter quantity: ");
+        
         int quantity = scanner.nextInt();
-        MenuItem picked = menu.get(choice);
-        orders.add(new Order(picked, quantity));
+        MenuItem picked = menu.get(choice-1);
+
+        orders.add( new Order(picked, quantity));
+
+        System.out.println("order size : "+orders.size());
+
         System.out.println("Added: " + picked.getName() + " x " + quantity);
+
     }
 
     public double getGrandTotal() {
         double total = 0;
         for (Order order : orders) {
+
             total += order.getTotal();
         }
+
+
         return total;
+
     }
 
     public void printReceipt() {
+
         view.printReceipt(orders);
         System.out.println("Grand Total: Rs." + (int) getGrandTotal());
+        orders.clear();
+
     }
 }

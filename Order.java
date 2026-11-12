@@ -1,5 +1,7 @@
+import java.sql.SQLOutput;
 
 public class Order {
+
     private MenuItem item;
     private int quantity;
 
@@ -16,8 +18,10 @@ public class Order {
         return quantity;
     }
 
-    
     public double getTotal() {
         return item.getPrice() * quantity ;
+
+
     }
+
 }
