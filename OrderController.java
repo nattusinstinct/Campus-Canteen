@@ -29,7 +29,9 @@ public class OrderController {
     public void takeOrder(int choice) {
         System.out.print("Enter quantity: ");
         int quantity = scanner.nextInt();
+
         MenuItem picked = menu.get(choice-1);
+
         orders.add(new Order(picked, quantity));
         System.out.println("\nsize  ; "+orders.size());
         System.out.println("Added: " + picked.getName() + " x " + quantity);
