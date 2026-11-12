@@ -16,8 +16,8 @@ public class Order {
         return quantity;
     }
 
-    
+
     public double getTotal() {
-        return item.getPrice();
+        return item.getPrice()*quantity;
     }
 }
